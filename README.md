@@ -1,3 +1,6 @@
+🎥 [Demo video](https://drive.google.com/file/d/1w-BPV5iDZ_WDoC9WfhdHpmML23jgDO-s/view?usp=drive_link)
+
+
 # Kochi Metro - AI-Driven Train Induction Planning & Scheduling
 
 A production-ready React + TypeScript + Tailwind frontend for the Smart India Hackathon (SIH) problem statement: "AI-Driven Train Induction Planning & Scheduling" for Kochi Metro.
