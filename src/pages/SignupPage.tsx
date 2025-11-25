@@ -27,6 +27,9 @@ const SignupPage: React.FC = () => {
   const navigate = useNavigate();
   const login = useAuthStore((state) => state.login);
 
+  // Use the same local hero image as HomePage, via Vite BASE_URL for reliability
+  const localHero = `${import.meta.env.BASE_URL}kochi-metro.png.png`;
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -50,17 +53,17 @@ const SignupPage: React.FC = () => {
   return (
     <div className="homepage-container">
       <div className="homepage-left">
-        <img src="/public/kochi-metro-logo.png" alt="Kochi Metro" className="metro-logo" />
-        <h1>Kochi Metro</h1>
+        <div className="metro-hero">
+          <img src={localHero} alt="Modern metro train" loading="eager" decoding="async" />
+        </div>
+        <h1 className="homepage-title">Kochi Metro</h1>
         <p className="homepage-tagline">Connecting the city, powering the future.</p>
-        <a href="https://kochimetro.org/" target="_blank" rel="noopener noreferrer" className="official-link">
-          Visit Official Website
-        </a>
+        <a href="https://kochimetro.org/" target="_blank" rel="noopener noreferrer" className="official-link">Visit Official Website</a>
       </div>
       <div className="homepage-right">
         <div className="auth-card">
           <h2>Sign Up</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="auth-form">
             <input name="name" type="text" placeholder="Name" value={form.name} onChange={handleChange} required />
             <input name="username" type="text" placeholder="Username" value={form.username} onChange={handleChange} required />
             <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
@@ -71,7 +74,7 @@ const SignupPage: React.FC = () => {
                 <option key={role} value={role}>{role}</option>
               ))}
             </select>
-            <button type="submit">Sign Up</button>
+            <button type="submit" className="auth-submit">Sign Up</button>
           </form>
         </div>
       </div>

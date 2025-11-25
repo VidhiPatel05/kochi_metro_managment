@@ -3,13 +3,16 @@ import { useAuthStore } from '../../store/useAuthStore';
 import { Button } from '../ui/Button';
 import { Train, LogOut, User, Bell, Settings, Search, Menu } from 'lucide-react';
 import { useUIStore } from '../../store/useUIStore';
+import { useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const { user, logout } = useAuthStore();
   const { toggleSidebar } = useUIStore();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
+    navigate('/');
   };
 
   return (

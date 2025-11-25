@@ -17,6 +17,28 @@
   width: 120px;
   margin-bottom: 24px;
 }
+.metro-hero {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+}
+.metro-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.homepage-title {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(30,58,138,0.18);
+}
 .homepage-tagline {
   margin: 16px 0 32px 0;
   font-size: 1.2rem;
@@ -78,6 +100,18 @@
 }
 .auth-card button:hover {
   background: #145374;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth-submit {
+  width: 100%;
+}
+.auth-error {
+  color: #dc2626;
+  margin-top: 6px;
 }
 .switch-auth {
   text-align: center;
@@ -90,89 +124,44 @@
   padding: 8px 12px;
   margin: 12px 0 8px 0;
   color: #145374;
-}.homepage-container {
-  display: flex;
-  min-height: 100vh;
-  background: #f4f6f8;
 }
-.homepage-left {
-  flex: 1;
-  background: #0a3d62;
-  color: #fff;
+.demo-list {
+  font-size: 0.95em;
+  margin: 8px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Footer */
+.homepage-footer {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  right: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  pointer-events: none;
 }
-.metro-logo {
-  width: 120px;
-  margin-bottom: 24px;
+.footer-links {
+  pointer-events: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.homepage-tagline {
-  margin: 16px 0 32px 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-.official-link {
-  color: #fff;
-  background: #1dd1a1;
-  padding: 8px 20px;
-  border-radius: 20px;
+.footer-links a {
+  color: #2563eb;
   text-decoration: none;
-  font-weight: 500;
-  margin-top: 24px;
-  transition: background 0.2s;
 }
-.official-link:hover {
-  background: #10ac84;
-}
-.homepage-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-}
-.auth-card {
-  background: #f8fafc;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-  padding: 32px 28px;
-  width: 100%;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-.auth-card h2 {
-  margin-bottom: 18px;
-  color: #0a3d62;
-}
-.auth-card input {
-  margin-bottom: 14px;
-  padding: 10px 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-.auth-card button {
-  background: #0a3d62;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 0;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 10px;
-  transition: background 0.2s;
-}
-.auth-card button:hover {
-  background: #145374;
-}
-.switch-auth {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #555;
+
+/* Subtle upward nudge of the login card on larger screens for better initial centering */
+@media (min-width: 768px) and (min-height: 650px) {
+  .auth-card {
+    transform: translateY(-36px);
+  }
 }
